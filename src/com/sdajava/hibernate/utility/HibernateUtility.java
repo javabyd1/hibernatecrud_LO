@@ -10,6 +10,13 @@ public class HibernateUtility {
 	        .configure("com/sdajava/hibernate/hibernate.cfg.xml")
 			.buildSessionFactory();
 
+	/*
+	Jezeli plik hibernate.cfg.xml jest w katalogu resources to SessionFactory powinno wygladac:
+	private final static SessionFactory sf = new Configuration()
+	        .configure()
+			.buildSessionFactory();
+	 */
+
     private static Session session = sf.openSession();
 
 	private HibernateUtility() {
