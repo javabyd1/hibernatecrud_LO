@@ -2,6 +2,7 @@ package com.sdajava.hibernate;
 
 import com.sdajava.hibernate.implement.UserDAOImpl;
 import com.sdajava.hibernate.model.User;
+import com.sdajava.hibernate.utility.HibernateUtility;
 
 public class Main {
 
@@ -21,5 +22,7 @@ public class Main {
         userDAOImpl.insertUser(user1);
  		userDAOImpl.getAllUsers();
 
+		HibernateUtility hu = new HibernateUtility ();
+		hu.dispose ();
 	}
 }

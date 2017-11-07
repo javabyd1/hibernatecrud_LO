@@ -19,7 +19,7 @@ public class HibernateUtility {
 
     private static Session session = sf.openSession();
 
-	private HibernateUtility() {
+	public HibernateUtility() {
 	}
 
 	public static Session getHibernateSession() {
@@ -27,5 +27,13 @@ public class HibernateUtility {
 	    	  session = (Session) new HibernateUtility();
 	       }
 	       return session;
+	}
+	public void dispose(){
+		if(session != null && session.isOpen()){
+			session.close();
+		}
+		if(sf != null && !sf.isClosed()){
+			sf.close();
+		}
 	}
 }
